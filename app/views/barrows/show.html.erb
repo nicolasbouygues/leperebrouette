@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @barrow.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @barrow.description %>
+</p>
+
+<p>
+  <strong>Town:</strong>
+  <%= @barrow.town %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @barrow.category %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @barrow.price %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @barrow.user %>
+</p>
+
+<%= link_to 'Edit', edit_barrow_path(@barrow) %> |
+<%= link_to 'Back', barrows_path %>
