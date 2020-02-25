@@ -1,1 +1,23 @@
 // Specific CSS for your home-page
+.homepage {
+  display: flex;
+    justify-content: space-around;
+
+}
+
+.image {
+  box-shadow: 4px 4px 4px black;
+}
+
+body {
+  background-color: #EFC11F;
+}
+
+.form-homepage {
+  background-color: #273E47;
+  box-shadow: 4px 4px 4px black;
+}
+
+.list-homepage li {
+list-style-type: none;
+}
