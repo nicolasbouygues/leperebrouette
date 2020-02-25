@@ -17,3 +17,4 @@ end
 Barrow.create(user_id: 1, name: "Choupette", description: "A chenille, 1,6L, V6 Turbo Sport", category: "Thermique", price: 667)
 puts 'Finished!'
 
+
