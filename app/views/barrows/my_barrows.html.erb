@@ -1,0 +1,14 @@
+<tr>
+<% if @barrows.nil?  %>
+<%= p "No Barrows" %>
+<% else %>
+<% @barrows.each do |barrow| %>
+<td><%= barrow.name %></td>
+<td><%= barrow.description %></td>
+<td><%= barrow.town %></td>
+<td><%= barrow.price %></td>
+<td><%= link_to 'Edit', edit_barrow_path(barrow) if policy(barrow).update?%></td>
+<td><%= link_to 'Destroy', barrow, method: :delete, data: { confirm: 'Are you sure?' } if policy(barrow).destroy? %></td>
+<% end %>
+<% end %>
+</tr>

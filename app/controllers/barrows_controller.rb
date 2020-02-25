@@ -7,6 +7,12 @@ class BarrowsController < ApplicationController
     @barrows = policy_scope(Barrow).order(created_at: :desc)
   end
 
+
+  # GET /my_barrows
+  def my_barrows
+    @barrows = Barrow.where(user_id: current_user.id)
+    authorize @barrows
+  end
   # GET /barrows/1
   # GET /barrows/1.json
   def show
