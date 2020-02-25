@@ -14,7 +14,7 @@ puts 'Creating 10 fake users and a barrow'
   user = User.new(username: Faker::Internet.username, email: Faker::Internet.email, password: Faker::Internet.password, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
   user.save!
 end
-Barrow.create(user_id: 1, name: "Choupette", description: "A chenille, 1,6L, V6 Turbo Sport", category: "Thermique", price: 667)
+Barrow.create(user_id: 5, name: "Choupette", description: "A chenille, 1,6L, V6 Turbo Sport", category: "Thermique", price: 667)
 puts 'Finished!'
 
 

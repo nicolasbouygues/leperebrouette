@@ -23,7 +23,7 @@
         <td><%= barrow.town %></td>
         <td><%= barrow.category %></td>
         <td><%= barrow.price %></td>
-        <td><%= barrow.user.id %></td>
+        <td><%= barrow.user.username %></td>
         <td><%= link_to 'Show', barrow %></td>
         <td><%= link_to 'Edit', edit_barrow_path(barrow) if policy(barrow).update?%></td>
         <td><%= link_to 'Destroy', barrow, method: :delete, data: { confirm: 'Are you sure?' } if policy(barrow).destroy? %></td>
