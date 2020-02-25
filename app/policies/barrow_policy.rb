@@ -16,7 +16,11 @@ class BarrowPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    true
+  end
+
+  def new?
+    true
   end
 
   def show?

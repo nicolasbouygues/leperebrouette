@@ -26,11 +26,12 @@ class BarrowsController < ApplicationController
   # POST /barrows.json
   def create
     @barrow = Barrow.new(barrow_params)
+    @barrow.user = current_user
     authorize @barrow
 
     respond_to do |format|
       if @barrow.save
-        format.html { redirect_to @barrows, notice: 'Barrow was successfully created.' }
+        format.html { redirect_to barrow_path(@barrow), notice: 'Barrow was successfully created.' }
         format.json { render :show, status: :created, location: @barrow }
       else
         format.html { render :new }
