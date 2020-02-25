@@ -15,6 +15,10 @@ class BarrowPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def my_barrows?
+    true
+  end
+
   def create?
     true
   end
