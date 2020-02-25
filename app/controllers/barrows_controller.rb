@@ -4,7 +4,7 @@ class BarrowsController < ApplicationController
   # GET /barrows
   # GET /barrows.json
   def index
-    @barrows = Barrow.all
+    @barrows = policy_scope(Barrow).order(created_at: :desc)
   end
 
   # GET /barrows/1
@@ -15,6 +15,7 @@ class BarrowsController < ApplicationController
   # GET /barrows/new
   def new
     @barrow = Barrow.new
+    authorize @barrow
   end
 
   # GET /barrows/1/edit
@@ -25,10 +26,11 @@ class BarrowsController < ApplicationController
   # POST /barrows.json
   def create
     @barrow = Barrow.new(barrow_params)
+    authorize @barrow
 
     respond_to do |format|
       if @barrow.save
-        format.html { redirect_to @barrow, notice: 'Barrow was successfully created.' }
+        format.html { redirect_to @barrows, notice: 'Barrow was successfully created.' }
         format.json { render :show, status: :created, location: @barrow }
       else
         format.html { render :new }
@@ -65,6 +67,7 @@ class BarrowsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_barrow
       @barrow = Barrow.find(params[:id])
+      authorize @barrow
     end
 
     # Only allow a list of trusted parameters through.

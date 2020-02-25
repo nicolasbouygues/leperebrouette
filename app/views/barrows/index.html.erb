@@ -23,10 +23,10 @@
         <td><%= barrow.town %></td>
         <td><%= barrow.category %></td>
         <td><%= barrow.price %></td>
-        <td><%= barrow.user %></td>
+        <td><%= barrow.user.id %></td>
         <td><%= link_to 'Show', barrow %></td>
-        <td><%= link_to 'Edit', edit_barrow_path(barrow) %></td>
-        <td><%= link_to 'Destroy', barrow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_barrow_path(barrow) if policy(barrow).update?%></td>
+        <td><%= link_to 'Destroy', barrow, method: :delete, data: { confirm: 'Are you sure?' } if policy(barrow).destroy? %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,6 @@
 
 <br>
 
-<%= link_to 'New Barrow', new_barrow_path %>
+<% if policy(Barrow).create? %>
+  <%= link_to "New barrow", new_barrow_path %>
+<% end %>

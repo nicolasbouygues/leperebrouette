@@ -9,9 +9,11 @@ require "faker"
 
 # TODO: Write a seed to insert 100 posts in the database
 
-puts 'Creating 10 fake users...'
+puts 'Creating 10 fake users and a barrow'
 10.times do
   user = User.new(username: Faker::Internet.username, email: Faker::Internet.email, password: Faker::Internet.password, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
   user.save!
 end
+Barrow.create(user_id: 1, name: "Choupette", description: "A chenille, 1,6L, V6 Turbo Sport", category: "Thermique", price: 667)
 puts 'Finished!'
+
