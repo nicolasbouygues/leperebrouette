@@ -79,6 +79,6 @@ class BarrowsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def barrow_params
-      params.require(:barrow).permit(:name, :description, :town, :category, :price, :user_id)
+      params.require(:barrow).permit(:name, :description, :town, :category, :price, :user_id, :photo)
     end
 end
