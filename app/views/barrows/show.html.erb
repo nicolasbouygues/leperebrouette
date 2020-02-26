@@ -29,6 +29,6 @@
   <strong>User:</strong>
   <%= @barrow.user.username %>
 </p>
-
+<%= link_to 'Book', barrow_bookings_path(@barrow), method: :post  %>
 <%= link_to 'Edit', edit_barrow_path(@barrow) %> |
 <%= link_to 'Back', my_barrows_path %>

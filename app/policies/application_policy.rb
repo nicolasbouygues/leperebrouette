@@ -14,6 +14,10 @@ class ApplicationPolicy
     false
   end
 
+  def booking?
+    false
+  end
+
   def create?
     false
   end
