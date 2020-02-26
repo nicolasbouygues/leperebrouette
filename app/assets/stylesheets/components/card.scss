@@ -13,3 +13,23 @@
   width: 40px;
 }
 
+.container-car-desc {
+  display: flex;
+  position: relative;
+
+}
+
+.card-trip-desc {
+  padding-top: 0px;
+  margin-left: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: white;
+}
+
+.card-text {
+  justify-content: center;
+  align-items: center;
+}
