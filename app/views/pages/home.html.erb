@@ -4,7 +4,7 @@
 
     <div class="form-homepage">
 
-      <%= simple_form_for barrows_path, method: :get, class: "action" do |f| %>
+      <%= simple_form_for :search, url: barrows_path, method: :get, class: "action" do |f| %>
       <%= f.input :town, input_html: {class: "form-control", id: "exampleInputPassword1"}, label: false, placeholder: "Ville" %>
       <%= f.input :category, input_html: {class: "form-control", id: "exampleInputEmail1"}, label: false, placeholder: "Catégorie" %>
       <%= f.input :booking_date, input_html: {class: "form-control", id: "exampleInputEmail1"}, label: false, placeholder: "Date" %>

@@ -1,18 +1,26 @@
 class BarrowsController < ApplicationController
   before_action :set_barrow, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :authenticate_user!, only: [:index, :show]
   # GET /barrows
   # GET /barrows.json
   def index
-    @barrows = policy_scope(Barrow).order(created_at: :desc)
+    if params[:search].present?
+      @barrows = Barrow.where(town: params[:search][:town]).where(category: params[:search][:category])
+    else
+      @barrows = Barrow.all
+    end
+
+    # authorize @barrows
+    # @barrows = Barrow.where(town: param[:town] AND category: params[:category])
+    # @barrows = policy_scope(Barrow).order(created_at: :desc)
   end
 
   # GET /my_barrows
   def my_barrows
     @barrows = Barrow.where(user_id: current_user.id)
     @bookings = Booking.where(user_id: current_user.id)
-    authorize @barrows
-    authorize @bookings
+    # authorize @barrows
+    # authorize @bookings
   end
   # GET /barrows/1
   # GET /barrows/1.json
@@ -23,7 +31,7 @@ class BarrowsController < ApplicationController
   # GET /barrows/new
   def new
     @barrow = Barrow.new
-    authorize @barrow
+    # authorize @barrow
   end
 
   # GET /barrows/1/edit
@@ -35,7 +43,7 @@ class BarrowsController < ApplicationController
   def create
     @barrow = Barrow.new(barrow_params)
     @barrow.user = current_user
-    authorize @barrow
+    # authorize @barrow
 
     respond_to do |format|
       if @barrow.save
@@ -76,7 +84,7 @@ class BarrowsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_barrow
       @barrow = Barrow.find(params[:id])
-      authorize @barrow
+      # authorize @barrow
     end
 
     # Only allow a list of trusted parameters through.
