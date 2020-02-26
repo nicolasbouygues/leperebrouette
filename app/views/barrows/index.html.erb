@@ -21,6 +21,11 @@
               <p> <%= barrow.category %> </p>
               <p> <%= barrow.town %> </p>
               <h2 class="card-trip-pricing">£ <%= barrow.price %> </h2>
+              <% if barrow.user.photo.attached? %>
+              <%= cl_image_tag barrow.user.photo.key, class: "card-trip-user" %>
+              <% else %>
+              <%= image_tag "anna.png", class: "card-trip-user" %>
+              <% end %>
             </div>
         </div>
     </div>
