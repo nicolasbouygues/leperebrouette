@@ -12,3 +12,20 @@
 <% end %>
 <% end %>
 </tr>
+
+<br>
+<br>
+
+<tr>
+<% if @bookings.nil?  %>
+<%= p "No Bookings" %>
+<% else %>
+<% @bookings.each do |booking| %>
+<ul>
+<li><%= booking.booking_date %></li>
+<li><%= booking.barrow.name %></li>
+<li><%= booking.barrow.price %></li>
+</ul>
+<% end %>
+<% end %>
+</tr>

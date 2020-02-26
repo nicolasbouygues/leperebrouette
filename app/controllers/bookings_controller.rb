@@ -1,55 +1,54 @@
-class BarrowsController < ApplicationController
+class BookingsController < ApplicationController
   before_action :set_barrow, only: [:show, :edit, :update, :destroy]
 
-  # GET /barrows
-  # GET /barrows.json
+  # GET /bookings
+  # GET /bookings.json
   def index
-    @barrows = policy_scope(Barrow).order(created_at: :desc)
+    @bookings = policy_scope(Barrow).order(created_at: :desc)
   end
 
-  # GET /my_barrows
-  def my_barrows
-    @barrows = Barrow.where(user_id: current_user.id)
+  # GET /my_bookings
+  def my_bookings
+    @bookings = Barrow.where(user_id: current_user.id)
     @bookings = Booking.where(user_id: current_user.id)
-    authorize @barrows
     authorize @bookings
   end
-  # GET /barrows/1
-  # GET /barrows/1.json
+  # GET /bookings/1
+  # GET /bookings/1.json
   def show
-    @booking = Booking.new
   end
 
-  # GET /barrows/new
+  # GET /bookings/new
   def new
-    @barrow = Barrow.new
-    authorize @barrow
+    @booking = Booking.new
+    authorize @booking
   end
 
-  # GET /barrows/1/edit
+  # GET /bookings/1/edit
   def edit
   end
 
-  # POST /barrows
-  # POST /barrows.json
+  # POST /bookings
+  # POST /bookings.json
   def create
-    @barrow = Barrow.new(barrow_params)
-    @barrow.user = current_user
-    authorize @barrow
+    @booking = Booking.new(booking_date: Time.now)
+    @booking.user = current_user
+    @booking.barrow = Barrow.find(params[:barrow_id])
+    authorize @booking
 
     respond_to do |format|
-      if @barrow.save
-        format.html { redirect_to barrow_path(@barrow), notice: 'Barrow was successfully created.' }
-        format.json { render :show, status: :created, location: @barrow }
+      if @booking.save!
+        format.html { redirect_to my_barrows_path, notice: 'booking was successfully created.' }
+        format.json { render :show, status: :created, location: @booking }
       else
         format.html { render :new }
-        format.json { render json: @barrow.errors, status: :unprocessable_entity }
+        format.json { render json: @booking.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /barrows/1
-  # PATCH/PUT /barrows/1.json
+  # PATCH/PUT /bookings/1
+  # PATCH/PUT /bookings/1.json
   def update
     respond_to do |format|
       if @barrow.update(barrow_params)
@@ -62,12 +61,12 @@ class BarrowsController < ApplicationController
     end
   end
 
-  # DELETE /barrows/1
-  # DELETE /barrows/1.json
+  # DELETE /bookings/1
+  # DELETE /bookings/1.json
   def destroy
     @barrow.destroy
     respond_to do |format|
-      format.html { redirect_to barrows_url, notice: 'Barrow was successfully destroyed.' }
+      format.html { redirect_to bookings_url, notice: 'Barrow was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -80,9 +79,6 @@ class BarrowsController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
-    def barrow_params
-      params.require(:barrow).permit(:name, :description, :town, :category, :price, :user_id)
-    end
 
     def booking_params
       params.require(:booking).permit(:booking_date, :user_id, :barrow_id)
