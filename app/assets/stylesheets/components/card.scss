@@ -15,21 +15,43 @@
 
 .container-car-desc {
   display: flex;
-  position: relative;
+  justify-content: space-between;
 
 }
 
+
+
 .card-trip-desc {
   padding-top: 0px;
-  margin-left: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   background-color: white;
 }
 
-.card-text {
-  justify-content: center;
+
+
+.card-text .price {
   align-items: center;
+}
+
+
+.card-desc {
+  margin-top: 50px;
+  padding-top: 15px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-desc .title {
+  text-align: center;
+}
+
+
+.card-desc .desc {
+  padding-left: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
 }

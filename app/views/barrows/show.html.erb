@@ -1,72 +1,40 @@
 <p id="notice"><%= notice %></p>
 
+
+<div class="container">
 <div class="container-car-desc">
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="https://images.unsplash.com/photo-1563210199-6ec2cfedd11e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="First slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="https://images.unsplash.com/photo-1528092744838-b91de0a10615?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Second slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="https://images.unsplash.com/flagged/photo-1576500392071-bef0ed93d40a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="Third slide">
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
+  <div >
+  <%= cl_image_tag @barrow.photo.key, height: 500, width: 730, crop: :fill %>
   </div>
 
-  <div class="card-trip-desc" style="width: 18rem;">
+  <div class="card-trip-desc">
     <div class="card-body">
-      <h5 class="card-text"> <%= @barrow.user.username %> </h5>
+      <div class="avatar-username">
+        <img class="avatar" alt="avatar" src="https://i1.wp.com/www.troops.fr/wp-content/uploads/2019/04/anna-1.jpg?fit=1024%2C970&ssl=1" />
+        <h5 class="card-text"> <%= @barrow.user.username %> </h5>
+      </div>
       <p class="card-text"><%= @barrow.town %></p>
       <p class="card-text"><%= @barrow.user.email %></p>
-      <h4 class="card-text"><%= @barrow.price %> €</h4>
+      <h4 class="card-text price"><%= @barrow.price %> €</h4>
     <div class="card-body">
-      <a class="btn btn-flat" href="#">Louer</a>
+
+      <%= link_to 'Book', barrow_bookings_path(@barrow), method: :post, class: "btn btn-flat"  %>
+
    </div>
 
     </div>
   </div>
 </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @barrow.name %>
-</p>
+<div class="card-desc">
+  <h4 class="title"><%= @barrow.name %></h4>
+  <p class="desc"> <%= @barrow.description %></p>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @barrow.description %>
-</p>
+<br>
 
-<p>
-  <strong>Town:</strong>
-  <%= @barrow.town %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @barrow.category %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @barrow.price %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @barrow.user.username %>
-</p>
 <%= link_to 'Book', barrow_bookings_path(@barrow), method: :post  %>
 <%= link_to 'Edit', edit_barrow_path(@barrow) %> |
 <%= link_to 'Back', my_barrows_path %>
-a
+
+</div>
