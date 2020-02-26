@@ -7,11 +7,13 @@
   <% @barrows.each do |barrow| %>
      <div class="container">
         <div class="card-trip">
+          <div class="card-index">
           <% if barrow.photo.nil? %>
           <% elsif barrow.photo.attached? %>
             <%= link_to barrow_path(barrow) do %>
              <%= cl_image_tag barrow.photo.key %>
              <% end %>
+             </div>
           <% end %>
             <div class="card-trip-infos">
             <div>
@@ -19,7 +21,6 @@
               <p> <%= barrow.category %> </p>
               <p> <%= barrow.town %> </p>
               <h2 class="card-trip-pricing">£ <%= barrow.price %> </h2>
-              <%= cl_image_tag current_user.photo.key %>
             </div>
         </div>
     </div>

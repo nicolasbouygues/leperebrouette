@@ -75,7 +75,7 @@ class BarrowsController < ApplicationController
   def destroy
     @barrow.destroy
     respond_to do |format|
-      format.html { redirect_to barrows_url, notice: 'Barrow was successfully destroyed.' }
+      format.html { redirect_to my_barrows_path, notice: 'Barrow was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

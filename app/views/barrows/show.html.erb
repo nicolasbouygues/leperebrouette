@@ -4,13 +4,17 @@
 <div class="container">
 <div class="container-car-desc">
   <div >
-  <%= cl_image_tag @barrow.photo.key, height: 500, width: 730, crop: :fill %>
+  <%= cl_image_tag @barrow.photo.key, height: 500, width: 730, crop: :fill if @barrow.photo.attached? %>
   </div>
 
   <div class="card-trip-desc">
     <div class="card-body">
       <div class="avatar-username">
-        <img class="avatar" alt="avatar" src="https://i1.wp.com/www.troops.fr/wp-content/uploads/2019/04/anna-1.jpg?fit=1024%2C970&ssl=1" />
+        <% if @barrow.user.photo.attached? %>
+          <%= cl_image_tag @barrow.user.photo.key, width: 40, height: 40, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% else %>
+          <%= image_tag "anna.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
+        <% end %>
         <h5 class="card-text"> <%= @barrow.user.username %> </h5>
       </div>
       <p class="card-text"><%= @barrow.town %></p>
