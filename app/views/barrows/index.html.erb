@@ -17,6 +17,7 @@
               <p> <%= barrow.category %> </p>
               <p> <%= barrow.town %> </p>
               <h2 class="card-trip-pricing">£ <%= barrow.price %> </h2>
+              <%= cl_image_tag current_user.photo.key %>
             </div>
         </div>
     </div>
