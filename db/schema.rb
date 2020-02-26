@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_26_101353) do
+
+=======
+ActiveRecord::Schema.define(version: 2020_02_26_135316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,10 +43,11 @@ ActiveRecord::Schema.define(version: 2020_02_26_101353) do
     t.string "description"
     t.string "town"
     t.string "category"
-    t.integer "price"
+    t.string "price"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "booking_date"
     t.index ["user_id"], name: "index_barrows_on_user_id"
   end
 

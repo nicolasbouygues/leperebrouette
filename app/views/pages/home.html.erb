@@ -1,19 +1,18 @@
 <body>
-  <h1>Y'a quoi ? Y'a R fwere!</h1>
-  <div class="homepage">
+  <div class="pomehage">
+
+
     <div class="form-homepage">
-      <form action="">
-        <ul class="list-homepage">
-          <li><input type="text"></li>
-          <li><input type="text"></li>
-          <li><select class="homepage-select"></select></li>
-          <li><input type="submit"></li>
-        </ul>
-      </form>
+
+      <%= simple_form_for barrows_path, method: :get, class: "action" do |f| %>
+      <%= f.input :town, input_html: {class: "form-control", id: "exampleInputPassword1"}, label: false, placeholder: "Ville" %>
+      <%= f.input :category, input_html: {class: "form-control", id: "exampleInputEmail1"}, label: false, placeholder: "Catégorie" %>
+      <%= f.input :booking_date, input_html: {class: "form-control", id: "exampleInputEmail1"}, label: false, placeholder: "Date" %>
+      <%= f.submit "Rechercher", class: "kakolol", id: "lebouton" %>
+    <% end %>
     </div>
 
-    <div class="image">
-      <img src="http://www.labellebrouette.fr/wp-content/uploads/2016/04/La_Belle_Brouette_Workspace_design_dessin_projet_Stand_Vegetal_Paysagiste_Decorateur_Interieur_03.jpg" alt="Une brouette fraaah">
-    </div>
+    <img src="http://www.labellebrouette.fr/wp-content/uploads/2016/04/La_Belle_Brouette_Workspace_design_dessin_projet_Stand_Vegetal_Paysagiste_Decorateur_Interieur_03.jpg" class="imeg" alt="Une brouette fraaah">
+
   </div>
 </body>
