@@ -5,6 +5,9 @@ class BarrowPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    true
+  end
   def update?
     record.user == user
     # - record: the restaurant passed to the `authorize` method in controller

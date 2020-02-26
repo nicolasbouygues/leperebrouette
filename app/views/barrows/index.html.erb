@@ -9,7 +9,9 @@
         <div class="card-trip">
           <% if barrow.photo.nil? %>
           <% elsif barrow.photo.attached? %>
+            <%= link_to barrow_path(barrow) do %>
              <%= cl_image_tag barrow.photo.key %>
+             <% end %>
           <% end %>
             <div class="card-trip-infos">
             <div>

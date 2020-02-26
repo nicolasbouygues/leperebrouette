@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
   def my_bookings
     @bookings = Barrow.where(user_id: current_user.id)
     @bookings = Booking.where(user_id: current_user.id)
-    authorize @bookings
+    # authorize @bookings
   end
   # GET /bookings/1
   # GET /bookings/1.json
@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
   # GET /bookings/new
   def new
     @booking = Booking.new
-    authorize @booking
+    # authorize @booking
   end
 
   # GET /bookings/1/edit
@@ -34,7 +34,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_date: Time.now)
     @booking.user = current_user
     @booking.barrow = Barrow.find(params[:barrow_id])
-    authorize @booking
+    # authorize @booking
 
     respond_to do |format|
       if @booking.save!
@@ -75,7 +75,7 @@ class BookingsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_barrow
       @barrow = Barrow.find(params[:id])
-      authorize @barrow
+      # authorize @barrow
     end
 
     # Only allow a list of trusted parameters through.
