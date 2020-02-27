@@ -1,3 +1,4 @@
+<div class="container">
 <tr>
 <% if @barrows.nil?  %>
 <%= p "No Barrows" %>
@@ -13,8 +14,27 @@
 <% end %>
 </tr>
 
+<% if @barrows.nil?  %>
+<%= p "No Barrows" %>
+<% else %>
+<% @barrows.each do |barrow| %>
+<div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2><%=barrow.name%></h2>
+      <h6><%= barrow.town %></h6>
+      <p><%=barrow.description%></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= barrow.price %> €</h2>
+  </div>
+</div>
+<% end %>
+<% end %>
 <br>
 <br>
+
+
 
 <tr>
 <% if @bookings.nil?  %>
@@ -29,3 +49,4 @@
 <% end %>
 <% end %>
 </tr>
+</div>
