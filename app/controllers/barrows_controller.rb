@@ -38,12 +38,12 @@ class BarrowsController < ApplicationController
   def show
     @booking = Booking.new
     @barrows_coordinates = Barrow.geocoded
-        @markers = @barrows_coordinates.map do |barrow|
+    a = @barrows_coordinates.find(params[:id])
+        @markers =
             {
-              lat: barrow.latitude,
-              lng: barrow.longitude
+              lat: a.latitude,
+              lng: a.longitude
             }
-          end
   end
 
   # GET /barrows/new
