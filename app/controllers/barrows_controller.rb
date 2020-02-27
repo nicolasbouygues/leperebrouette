@@ -5,6 +5,7 @@ class BarrowsController < ApplicationController
   # GET /barrows
   # GET /barrows.json
   def index
+    cookies[:booking_date] = params[:search][:booking_date]
     if params[:search].present?
       if params[:search][:category].present?
       @barrows = Barrow.where("town ILIKE ?", "%#{params[:search][:town]}%").where("category ILIKE ?", "%#{params[:search][:category]}%")
