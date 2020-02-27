@@ -13,7 +13,10 @@
             <%= f.input :email, input_html: {class: "form-control-login", id: "InputEmail1"}, label: false, autofocus: true, placeholder: "Email ou username" %>
             <%= f.input :password, input_html: {class: "form-control-login", id: "InputPassword1"}, label: false, placeholder: "Mot de passe" %>
 
+          <%= f.input :remember_me, input_html: {class: "form-control-login"}, as: :boolean if devise_mapping.rememberable? %>
+
             <div class="center-button"><%= f.submit "Se connecter", id: "connexionbouton" %></div>
+
 
           <% end %>
         </div>
