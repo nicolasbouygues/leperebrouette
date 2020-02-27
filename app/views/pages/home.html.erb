@@ -1,18 +1,18 @@
-<body>
-  <div class="pomehage">
+<body class="background-body">
+  <div class="container">
+    <div class="pomehage">
 
+      <div class="form-homepage">
+        <h2 class="texts">Loue une brouette. Sah</h2>
+        <%= simple_form_for :search, url: barrows_path, method: :get, class: "action" do |f| %>
+        <%= f.input :town, input_html: {class: "form-control", id: "exampleInputPassword1"}, label: false, placeholder: "Ville" %>
+        <%= f.input :category, input_html: {class: "form-control", id: "exampleInputEmail1"}, label: false, placeholder: "Catégorie" %>
+        <%= f.input :booking_date, input_html: {class: "form-control", id: "exampleInputEmail1"}, label: false, placeholder: "Date" %>
+        <%= f.submit "Rechercher", class: "kak", id: "lebouton" %>
+      <% end %>
+      </div>
 
-    <div class="form-homepage">
-
-      <%= simple_form_for :search, url: barrows_path, method: :get, class: "action" do |f| %>
-      <%= f.input :town, input_html: {class: "form-control", id: "exampleInputPassword1"}, label: false, placeholder: "Ville" %>
-      <%= f.input :category, input_html: {class: "form-control", id: "exampleInputEmail1"}, label: false, placeholder: "Catégorie" %>
-      <%= f.input :booking_date, input_html: {class: "form-control", id: "exampleInputEmail1"}, label: false, placeholder: "Date" %>
-      <%= f.submit "Rechercher", class: "kakolol", id: "lebouton" %>
-    <% end %>
+      <img src="http://www.labellebrouette.fr/wp-content/uploads/2016/04/La_Belle_Brouette_Workspace_design_dessin_projet_Stand_Vegetal_Paysagiste_Decorateur_Interieur_03.jpg" class="imeg" alt="Une brouette fraaah">
     </div>
-
-    <img src="http://www.labellebrouette.fr/wp-content/uploads/2016/04/La_Belle_Brouette_Workspace_design_dessin_projet_Stand_Vegetal_Paysagiste_Decorateur_Interieur_03.jpg" class="imeg" alt="Une brouette fraaah">
-
   </div>
 </body>
