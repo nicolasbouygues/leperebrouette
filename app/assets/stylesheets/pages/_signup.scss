@@ -1,0 +1,52 @@
+.carte-de-sign-up {
+  margin-top: 50px;
+  border-radius: 10px;
+  background-color: #273E47;
+  max-width: 1000px;
+  justify-content: middle;
+  box-shadow: 8px 8px 10px;
+}
+
+#signuptext {
+  font-size: 50px;
+  color: white;
+  margin-left: 70px;
+  padding-top: 40px;
+}
+
+.form-inputs {
+  display:flex;
+}
+
+.sign-up-container{
+  margin: 0 auto;
+  max-width: 50vw;
+}
+
+.photoandsignup {
+  margin-top: 65px;
+  margin-left: 40px;
+  width: 400px;
+}
+
+#signupbouton {
+  margin: 50px;
+  margin-top: 10px;
+  background: #EFC11F;
+  color: black;
+  border: 4px solid white;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 10px 10px;
+  width:300px;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.les6premiers {
+  margin-left: 20px;
+  width: 450px;
+  margin-bottom: 20px;
+}
