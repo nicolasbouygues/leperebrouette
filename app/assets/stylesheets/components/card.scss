@@ -39,8 +39,6 @@
 
 
 .card-desc {
-  margin-top: 50px;
-  padding-top: 15px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -56,3 +54,42 @@
   padding-bottom: 15px;
   margin-bottom: 15px;
 }
+
+
+
+.card-trip .link-destroy {
+  position: absolute;
+  margin-right: 5px;
+  top: 5px;
+  right: 5px;
+  border: 2px solid #273E47;
+  width: 25px;
+  height: 25px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: lighter;
+  color: #273E47;
+  font-size: 20px;
+  transform: rotate(45deg);
+  font-size: 30px;
+  opacity: 0.3;
+}
+
+
+.card-trip .link-destroy:hover {
+  text-decoration: none;
+  background-color: #273E47;
+  border: 2px solid white;
+  color: white;
+  opacity: 1;
+}
+​
+.card-trip .link {
+  text-decoration: none;
+}
+

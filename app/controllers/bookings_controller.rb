@@ -29,7 +29,7 @@ class BookingsController < ApplicationController
   # POST /bookings
   # POST /bookings.json
   def create
-    @booking = Booking.new(booking_date: Time.now)
+    @booking = Booking.new(booking_date: cookies[:booking_date])
     @booking.user = current_user
     @booking.barrow = Barrow.find(params[:barrow_id])
     # authorize @booking

@@ -1,2 +1,10 @@
-<h1><%= p "Congrats ! You have booked #{@booking.barrow.name} on the #{@booking.booking_date}" %></h1>
-<h2>Click <%= link_to "here", my_barrows_path %> to go to your home page</h2>
+<div class="container">
+  <div class="success">
+    <h1><%= p "Congrats ! You have booked #{@booking.barrow.name} on the #{@booking.booking_date}" %></h1>
+    <h2>Click <%= link_to "here", my_barrows_path %> to go to your home page</h2>
+  <br>
+    <div class="container-car-desc">
+      <img id="gif-barrow" src="https://media.giphy.com/media/1avrDdGYCH2a4/source.gif" alt="">
+    </div>
+  </div>
+</div>
