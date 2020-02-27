@@ -1,10 +1,11 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 8px;
+  grid-gap: 15px;
 }
 
 .card-trip {
+  position: relative;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
