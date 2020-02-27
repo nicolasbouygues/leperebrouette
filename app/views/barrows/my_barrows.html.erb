@@ -1,53 +1,64 @@
 <div class="container">
-<tr>
-<% if @barrows.nil?  %>
-<%= p "No Barrows" %>
-<% else %>
-<% @barrows.each do |barrow| %>
-<td><%= barrow.name %></td>
-<td><%= barrow.description %></td>
-<td><%= barrow.town %></td>
-<td><%= barrow.price %></td>
-<td><%= link_to 'Edit', edit_barrow_path(barrow) %></td>
-<td><%= link_to 'Destroy', barrow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-<% end %>
-<% end %>
-</tr>
+<br>
 
+<h1 class="my-barrows">Mes brouettes à moi rien qu'à moi</h1>
+
+<br>
+
+<div class="cards">
 <% if @barrows.nil?  %>
 <%= p "No Barrows" %>
 <% else %>
-<% @barrows.each do |barrow| %>
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <h2><%=barrow.name%></h2>
-      <h6><%= barrow.town %></h6>
-      <p><%=barrow.description%></p>
+  <% @barrows.each do |barrow| %>
+    <div class="card-trip">
+      <%= cl_image_tag barrow.photo.key, height: 500, width: 730, crop: :fill if barrow.photo.attached? %>
+      <p><%= link_to '+', barrow, method: :delete, data: { confirm: 'Are you sure?' }, class: "link-destroy" %></p>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%=barrow.name%></h2>
+          <h6><%= barrow.town %></h6>
+          <p><%=barrow.description%></p>
+          <p><%= link_to 'Edit', edit_barrow_path(barrow), class: "btn btn-ghost" %></p>
+
+
+        </div>
+        <h2 class="card-trip-pricing"><%= barrow.price %> €</h2>
+      </div>
     </div>
-    <h2 class="card-trip-pricing"><%= barrow.price %> €</h2>
-  </div>
+  <% end %>
+<% end %>
 </div>
-<% end %>
-<% end %>
 <br>
 <br>
 
+<h1 class="my-barrows">Les brouettes que j'ai loué une fois</h1>
+
+<br>
 
 
-<tr>
+
+<div class="cards">
 <% if @bookings.nil?  %>
 <%= p "No Bookings" %>
 <% else %>
 <% @bookings.each do |booking| %>
-<ul>
-<li><%= booking.booking_date %></li>
-<li><%= booking.barrow.name %></li>
-<li><%= booking.barrow.price %></li>
-<td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-</ul>
+    <div class="card-trip">
+      <%= cl_image_tag booking.barrow.photo.key, height: 500, width: 730, crop: :fill if booking.barrow.photo.attached? %>
+      <p><%= link_to '+', booking, method: :delete, data: { confirm: 'Are you sure?' }, class: "link-destroy" %></p>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%=booking.booking_date%></h2>
+          <h6><%= booking.barrow.name %></h6>
+          <br>
+        </div>
+        <h2 class="card-trip-pricing"><%= booking.barrow.price %> €</h2>
+        <% if booking.barrow.user.photo.attached? %>
+          <%= cl_image_tag booking.barrow.user.photo.key, width: 40, height: 40, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% else %>
+          <%= image_tag "anna.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 <% end %>
-<% end %>
-</tr>
 </div>
