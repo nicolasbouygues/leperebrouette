@@ -1,22 +1,28 @@
 <body class="lebody">
+  <div class="sign-in-container">
+    <div class=carde>
 
-  <div class="lelogin">
-    <h2 id="eej">Log in</h2>
-  </div>
-<div class="content">
-  <div class="form-container">
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <%= f.input :email, required: false,label:false, autofocus: true, input_html: { autocomplete: "email" }, placeholder: "Email ou username" %>
-        <%= f.input :password, required: false,label:false, input_html: { autocomplete: "current-password" }, placeholder: "Mot de passe" %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-
-      <div class="form-actions" id="hi">
-        <%= f.button :submit, "Se connecter" %>
+      <div class="lelogin">
+        <h2 id="logintext">Log in</h2>
       </div>
-    <% end %>
+
+      <div class="content">
+        <div class="form-container">
+
+          <%= simple_form_for :search, url: session_path(resource_name), method: :get, class: "actionner" do |f| %>
+            <%= f.input :email, input_html: {class: "form-control-login", id: "InputEmail1"}, label: false, autofocus: true, placeholder: "Email ou username" %>
+            <%= f.input :password, input_html: {class: "form-control-login", id: "InputPassword1"}, label: false, placeholder: "Mot de passe" %>
+
+            <div class="center-button"><%= f.submit "Se connecter", id: "connexionbouton" %></div>
+
+          <% end %>
+        </div>
+      </div>
+
+      <div class="links">
+        <%= render "devise/shared/links" %>
+      </div>
+
     </div>
-  </div>
-  <div class="burp">
-    <%= render "devise/shared/links" %>
   </div>
 </body>
