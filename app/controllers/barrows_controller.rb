@@ -44,7 +44,6 @@ class BarrowsController < ApplicationController
               lng: barrow.longitude
             }
           end
-      end
   end
 
   # GET /barrows/new
