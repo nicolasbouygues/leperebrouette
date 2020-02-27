@@ -1,11 +1,16 @@
 class BarrowsController < ApplicationController
   before_action :set_barrow, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
+
   # GET /barrows
   # GET /barrows.json
   def index
     if params[:search].present?
-      @barrows = Barrow.where(town: params[:search][:town]).where(category: params[:search][:category])
+      if params[:search][:category].present?
+      @barrows = Barrow.where("town ILIKE ?", "%#{params[:search][:town]}%").where("category ILIKE ?", "%#{params[:search][:category]}%")
+      else
+      @barrows = Barrow.where("town ILIKE ?", "%#{params[:search][:town]}%")
+      end
     else
       @barrows = Barrow.all
     end
