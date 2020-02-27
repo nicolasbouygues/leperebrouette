@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   devise_for :users
   get 'profile', to: 'barrows#my_barrows', as: :my_barrows
   resources :bookings, only: [:edit, :destroy]
+  get 'booking_success/:id', to: 'bookings#success', as: :success
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

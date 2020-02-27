@@ -1,12 +1,12 @@
 class BookingsController < ApplicationController
-  before_action :set_barrow, only: [:show, :edit, :update, :destroy]
+  before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   # GET /bookings
   # GET /bookings.json
-  def index
-    @bookings = policy_scope(Barrow).order(created_at: :desc)
+  def success
+    @booking = Booking.find(params[:id])
+    @booking.barrow = Barrow.find(@booking.barrow_id)
   end
-
   # GET /my_bookings
   def my_bookings
     @bookings = Barrow.where(user_id: current_user.id)
@@ -15,8 +15,6 @@ class BookingsController < ApplicationController
   end
   # GET /bookings/1
   # GET /bookings/1.json
-  def show
-  end
 
   # GET /bookings/new
   def new
@@ -38,7 +36,7 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       if @booking.save!
-        format.html { redirect_to my_barrows_path, notice: 'booking was successfully created.' }
+        format.html { redirect_to success_path(@booking), notice: 'booking was successfully created.' }
         format.json { render :show, status: :created, location: @booking }
       else
         format.html { render :new }
@@ -51,12 +49,12 @@ class BookingsController < ApplicationController
   # PATCH/PUT /bookings/1.json
   def update
     respond_to do |format|
-      if @barrow.update(barrow_params)
-        format.html { redirect_to @barrow, notice: 'Barrow was successfully updated.' }
-        format.json { render :show, status: :ok, location: @barrow }
+      if @booking.update(booking_params)
+        format.html { redirect_to my_barrows_path, notice: 'Booking was successfully updated.' }
+        format.json { render :show, status: :ok, location: @booking }
       else
         format.html { render :edit }
-        format.json { render json: @barrow.errors, status: :unprocessable_entity }
+        format.json { render json: @booking.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -64,17 +62,17 @@ class BookingsController < ApplicationController
   # DELETE /bookings/1
   # DELETE /bookings/1.json
   def destroy
-    @barrow.destroy
+    @booking.destroy
     respond_to do |format|
-      format.html { redirect_to bookings_url, notice: 'Barrow was successfully destroyed.' }
+      format.html { redirect_to my_barrows_path, notice: 'Booking was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_barrow
-      @barrow = Barrow.find(params[:id])
+    def set_booking
+      @booking = Booking.find(params[:id])
       # authorize @barrow
     end
 
