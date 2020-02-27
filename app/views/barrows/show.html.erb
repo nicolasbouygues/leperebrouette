@@ -30,6 +30,16 @@
   </div>
 </div>
 
+<br>
+
+<div
+  id="map" style="width: 100%; height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+
+<br>
+
 <div class="card-desc">
   <h4 class="title"><%= @barrow.name %></h4>
   <p class="desc"> <%= @barrow.description %></p>
