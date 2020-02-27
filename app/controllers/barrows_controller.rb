@@ -20,14 +20,6 @@ class BarrowsController < ApplicationController
       @barrows = Barrow.all
     end
 
-    @Barrows_coordinates = Barrow.geocoded
-
-      @markers = @Barrows_coordinates.map do |barrow|
-        {
-          lat: barrow.latitude,
-          lng: barrow.longitude
-        }
-      end
 
     # authorize @barrows
     # @barrows = Barrow.where(town: param[:town] AND category: params[:category])
@@ -38,13 +30,6 @@ class BarrowsController < ApplicationController
   def my_barrows
     @barrows = Barrow.where(user_id: current_user.id)
     @bookings = Booking.where(user_id: current_user.id)
-    @Barrows_coordinates = Barrow.geocoded.where(user_id: current_user.id)
-    @markers = @Barrows_coordinates.map do |barrow|
-        {
-          lat: barrow.latitude,
-          lng: barrow.longitude
-        }
-      end
     # authorize @barrows
     # authorize @bookings
   end
@@ -52,13 +37,13 @@ class BarrowsController < ApplicationController
   # GET /barrows/1.json
   def show
     @booking = Booking.new
-
-    @Barrows_coordinates = Barrow.geocoded.where(user_id: current_user.id)
-    @markers = @Barrows_coordinates.map do |barrow|
-        {
-          lat: barrow.latitude,
-          lng: barrow.longitude
-        }
+    @barrows_coordinates = Barrow.geocoded
+        @markers = @barrows_coordinates.map do |barrow|
+            {
+              lat: barrow.latitude,
+              lng: barrow.longitude
+            }
+          end
       end
   end
 
