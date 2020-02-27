@@ -7,5 +7,8 @@ class Barrow < ApplicationRecord
   validates :price, presence: true, numericality: { only_integer: true }
 
   has_one_attached :photo
+
+  geocoded_by :town
+  after_validation :geocode, if: :will_save_change_to_town?
 end
 
