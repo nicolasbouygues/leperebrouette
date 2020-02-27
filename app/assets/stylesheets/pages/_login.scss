@@ -1,3 +1,7 @@
+.center-button {
+  text-align: center;
+}
+
 .lelogin {
 text-align: center;
 color: white;
@@ -5,31 +9,62 @@ margin-top: 40px;
 font-size: 40px;
 }
 
-#hi {
-  margin-left: 50px;
-  color: white;
-  background-color: #EFC11F;
-  width: 500px;
-  height: 90px;
-  border-radius: 5px;
+#logintext {
+  font-size: 50px;
 }
-
-.lebody {
-  background-color: #273E47;
-}
-
-#eej {
-  font-size: 60px;
-}
-
-.burp {
-  text-align: center;
-  font-size: 30px;
-  margin-top: 50px;
-}
-
 
 .form-container{
   margin: 0 auto;
   max-width: 50vw;
+}
+
+.form-group .remember-me {
+  border: none;
+}
+
+#connexionbouton {
+  margin: 50px;
+  margin-top: 10px;
+  background: #EFC11F;
+  color: black;
+  border: 4px solid white;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 10px 15px;
+  width:500px;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 40px;
+}
+
+fieldset {
+  border: none;
+}
+
+.sign-in-container {
+  display: flex;
+  justify-content: center;
+}
+
+.carde {
+  margin-top: 50px;
+  border-radius: 10px;
+  background-color: #273E47;
+  max-width: 1000px;
+  justify-content: middle;
+  box-shadow: 8px 8px 10px;
+}
+
+#forgotpassword {
+  color: white;
+  font-size: 15px;
 }
