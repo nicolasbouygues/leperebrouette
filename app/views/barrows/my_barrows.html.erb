@@ -31,7 +31,7 @@
 <br>
 <br>
 
-<h1 class="my-barrows">Les brouettes que j'ai loué une fois</h1>
+<h1 class="my-barrows">Les brouettes que j'ai loué</h1>
 
 <br>
 
@@ -52,11 +52,13 @@
           <br>
         </div>
         <h2 class="card-trip-pricing"><%= booking.barrow.price %> €</h2>
-        <% if booking.barrow.user.photo.attached? %>
-          <%= cl_image_tag booking.barrow.user.photo.key, width: 40, height: 40, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <% else %>
-          <%= image_tag "anna.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
-        <% end %>
+        <div class= "card-trip-user avatar-bordered" >
+          <% if booking.barrow.user.photo.attached? %>
+            <%= cl_image_tag booking.barrow.user.photo.key, width: 40, height: 40, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+            <%= image_tag "anna.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
+          <% end %>
+        </div>
       </div>
     </div>
   <% end %>
