@@ -5,9 +5,9 @@
       <div class="form-homepage">
         <h2 class="texts">Loue une brouette. Sah</h2>
         <%= simple_form_for :search, url: barrows_path, method: :get, class: "action" do |f| %>
-        <%= f.input :town, input_html: {class: "form-control", id: "exampleInputPassword1"}, label: false, placeholder: "Ville" %>
-        <%= f.input :category, collection: ['Thermique', 'Manuel', 'Electrique', 'AssistantIncluded', 'Arc-en-ciel'], input_html: {class: "form-control", id: "exampleInputEmail1"}, label: false, placeholder: "Catégorie" %>
-        <%= f.input :booking_date, input_html: {class: "form-control", id: "exampleInputEmail1"}, label: false, placeholder: "Date" %>
+        <div class="bordure-jaune"><%= f.input :town, input_html: {class: "form-control", id: "exampleInputPassword1"}, label: false, placeholder: "Ville" %></div>
+        <div class="bordure-jaune"><%= f.input :category, collection: ['Thermique', 'Manuel', 'Electrique', 'AssistantIncluded', 'Arc-en-ciel'], input_html: {class: "form-control", id: "exampleInputEmail1"}, label: false, placeholder: "Catégorie" %></div>
+        <div class="bordure-jaune"><%= f.input :booking_date, input_html: {class: "form-control", id: "exampleInputEmail1"}, label: false, placeholder: "Date" %></div>
         <%= f.submit "Rechercher", class: "kak", id: "lebouton" %>
       <% end %>
       </div>

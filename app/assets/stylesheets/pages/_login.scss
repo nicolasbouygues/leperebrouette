@@ -43,7 +43,7 @@ font-size: 40px;
   flex-direction: column;
   text-align: center;
   font-size: 30px;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 fieldset {
@@ -56,7 +56,7 @@ fieldset {
 }
 
 .carde {
-  margin-top: 50px;
+  margin-top: 20px;
   border-radius: 10px;
   background-color: #273E47;
   max-width: 1000px;
@@ -67,4 +67,8 @@ fieldset {
 #forgotpassword {
   color: white;
   font-size: 15px;
+}
+
+.ssso {
+  border: none;
 }
