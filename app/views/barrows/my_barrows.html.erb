@@ -9,8 +9,11 @@
 <br>
 
 <div class="cards">
-<% if @barrows.nil?  %>
-<%= p "No Barrows" %>
+<% if @barrows.empty?  %>
+<p>
+Vous n'avez posté aucune annonce de brouette.
+Cliquez <%= link_to "ici", new_barrow_path %> pour poster une brouette.
+</p>
 <% else %>
   <% @barrows.each do |barrow| %>
     <div class="card-trip">
@@ -41,8 +44,11 @@
 
 
 <div class="cards">
-<% if @bookings.nil?  %>
-<%= p "No Bookings" %>
+<% if @bookings.empty?  %>
+<p>
+  Pas encore de locations. <br>
+  Cliquez <%= link_to "ici", root_path %> pour louer une brouette.
+</p>
 <% else %>
 <% @bookings.each do |booking| %>
     <div class="card-trip">
