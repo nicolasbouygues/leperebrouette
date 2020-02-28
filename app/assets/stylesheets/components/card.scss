@@ -14,10 +14,10 @@
   border-radius: 50%;
 }
 
+
 .container-car-desc {
   display: flex;
   justify-content: space-between;
-
 }
 
 
@@ -34,9 +34,18 @@
 
 
 .card-text .price {
-  align-items: center;
+  align-items: right;
+  position: absolute;
+  right: 16px;
+  top: -20px;
 }
 
+.card-trip-pricing {
+  align-items: right;
+  position: absolute;
+  right: 16px;
+  bottom: 20px;
+}
 
 .card-desc {
   overflow: hidden;
@@ -77,7 +86,7 @@
   font-size: 20px;
   transform: rotate(45deg);
   font-size: 30px;
-  opacity: 0.3;
+  opacity: 0.8;
 }
 
 
@@ -91,5 +100,10 @@
 ​
 .card-trip .link {
   text-decoration: none;
+}
+
+.card-trip-infos {
+  background-color: #273E47;
+  color: #EFC11F;
 }
 
