@@ -1,5 +1,8 @@
 .navbar-lewagon {
-  justify-content: space-between;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+    justify-content: space-between;
   background: white;
   box-shadow: 0px 2px 10px;
 }
@@ -13,3 +16,32 @@
 }
 
 
+
+.navbar-lewagon .navbar-brand span {
+  color: #EFC11F ;
+}
+
+.navbar-lewagon .navbar-brand p {
+  color: #273E47;
+  margin-bottom: 0px;
+  padding-left: 8px;
+
+}
+
+.title {
+  font-size: 20px;
+  color: #273E47;
+  margin-bottom: 0px;
+}
+
+.title span {
+  font-size: 24px;
+  color: #EFC11F;
+  margin-bottom: 0px;
+}
+
+.centertext {
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+}
