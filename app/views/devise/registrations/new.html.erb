@@ -8,15 +8,15 @@
 
         <div class="form-inputs">
           <div class="les6premiers">
-            <%= f.input :username, required: true, input_html: {id: "usernameinsignup"}, label: false, autofocus: true, placeholder: "Username" %>
-            <%= f.input :first_name, required: true, input_html: {id: "firstnameinsignup"}, label: false, autofocus: true, placeholder: "First name" %>
-            <%= f.input :last_name, required: true, input_html: {id: "lastnameinsignup"}, label: false, autofocus: true, placeholder: "Last name" %>
-            <%= f.input :email, required: true, input_html: {id: "emailinsignup"}, label: false, autofocus: true, placeholder: "Email" %>
-            <%= f.input :password,
+            <div class="bordure-jaune"><%= f.input :username, required: true, input_html: {id: "usernameinsignup"}, label: false, autofocus: true, placeholder: "Username" %></div>
+            <div class="bordure-jaune"><%= f.input :first_name, required: true, input_html: {id: "firstnameinsignup"}, label: false, autofocus: true, placeholder: "First name" %></div>
+            <div class="bordure-jaune"><%= f.input :last_name, required: true, input_html: {id: "lastnameinsignup"}, label: false, autofocus: true, placeholder: "Last name" %></div>
+            <div class="bordure-jaune"><%= f.input :email, required: true, input_html: {id: "emailinsignup"}, label: false, autofocus: true, placeholder: "Email" %></div>
+            <div class="bordure-jaune"><%= f.input :password,
                         required: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password", id: "passwordinsignup"}, label: false, placeholder: "Password" %>
-            <%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password", id: "passwordconfirmationinsignup"}, label: false, placeholder: "Password confirmation" %>
+                        input_html: { autocomplete: "new-password", id: "passwordinsignup"}, label: false, placeholder: "Password" %></div>
+            <div class="bordure-jaune"><%= f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password", id: "passwordconfirmationinsignup"}, label: false, placeholder: "Password confirmation" %></div>
           </div>
 
           <div class="photoandsignup">
