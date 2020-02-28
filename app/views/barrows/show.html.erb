@@ -1,74 +1,78 @@
-<body>
 
-<p id="notice"><%= notice %></p>
+  <body>
+
+  <p id="notice"><%= notice %></p>
 
 
-<div class="container">
-<div class="container-car-desc">
-  <div>
-  <%= cl_image_tag @barrow.photo.key, height: 500, width: 730, crop: :fill if @barrow.photo.attached? %>
-  </div>
+  <div class="container">
+  <div class="container-car-desc">
+    <div>
+    <%= cl_image_tag @barrow.photo.key, height: 500, width: 730, crop: :fill if @barrow.photo.attached? %>
+    </div>
 
-  <div class="card-trip-desc">
-    <div class="card-body">
-      <div class="avatar-username">
-        <% if @barrow.user.photo.attached? %>
-          <%= cl_image_tag @barrow.user.photo.key, width: 40, height: 40, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <% else %>
-          <%= image_tag "anna.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
-        <% end %>
-        <h5 class="card-text"> <%= @barrow.user.username %> </h5>
+    <div class="card-trip-desc">
+      <div class="card-body">
+        <div class="avatar-username">
+          <% if @barrow.user.photo.attached? %>
+            <%= cl_image_tag @barrow.user.photo.key, width: 40, height: 40, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+            <%= image_tag "avatar_default.png",crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
+          <% end %>
+          <h5 class="card-text"> <%= @barrow.user.username %> </h5>
+        </div>
+        <p class="card-text"><%= @barrow.town %></p>
+        <p class="card-text"><%= @barrow.user.email %></p>
+        <h4 class="card-text price"><%= @barrow.price %> €</h4>
+      <div class="card-body">
+
+        <%= link_to 'Louer', barrow_bookings_path(@barrow), method: :post, class: "btn btn-flat"  %>
+
+     </div>
+
       </div>
-      <p class="card-text"><%= @barrow.town %></p>
-      <p class="card-text"><%= @barrow.user.email %></p>
-      <h4 class="card-text price"><%= @barrow.price %> €</h4>
-    <div class="card-body">
-
-      <%= link_to 'Book', barrow_bookings_path(@barrow), method: :post, class: "btn btn-flat"  %>
-
-   </div>
-
     </div>
   </div>
-</div>
-
-<br>
-
-<div
-  id="map" style="width: 100%; height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
-
-<br>
-
-<div class="card-desc">
-  <h4 class="title"><%= @barrow.name %></h4>
-  <p class="desc"> <%= @barrow.description %></p>
-</div>
-
-<br>
-
-<%= link_to 'Book', barrow_bookings_path(@barrow), method: :post  %>
-<%= link_to 'Edit', edit_barrow_path(@barrow) %> |
-<%= link_to 'Back', my_barrows_path %>
-
-</div>
-
-</body>
 
 
-</body>
-  <div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
+  <br>
+
+  <div class="card-desc">
+    <h4 class="title"><%= @barrow.name %></h4>
+    <p class="desc"> <%= @barrow.description %></p>
   </div>
-  <div class="footer-copyright">
-    Le père brouette vous remercie chaleureusement de votre viste <i class="fas fa-heart"></i>
+
+
+
+  <br>
+
+  <div
+    id="map" style="width: 100%; height: 400px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+
+  <br>
+
+
+
+  <%= link_to 'Précédent', my_barrows_path %>
+
   </div>
-</div>
+
+
+
+
+  </body>
+    <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      Le père brouette vous remercie chaleureusement de votre viste <i class="fas fa-heart"></i>
+    </div>
+  </div>
 

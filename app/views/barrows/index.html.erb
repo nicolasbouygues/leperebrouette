@@ -5,10 +5,10 @@
 
 
 
-<h1>Les Brouettes</h1>
+<h1 class="congrats">Les Brouettes</h1>
 
 
-
+<br>
 
 <div class="cards">
   <% @barrows.each do |barrow| %>
@@ -26,7 +26,7 @@
         <% if barrow.user.photo.attached? %>
           <%= cl_image_tag barrow.user.photo.key, class: "card-trip-user avatar-bordered", width: 40, height: 40, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% else %>
-          <%= image_tag "anna.png", class: "card-trip-user avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
+          <%= image_tag "avatar_default.png", class: "card-trip-user avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
         <% end %>
         </div>
       </div>
