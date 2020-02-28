@@ -79,7 +79,7 @@ class BarrowsController < ApplicationController
   def update
     respond_to do |format|
       if @barrow.update(barrow_params)
-        format.html { redirect_to @barrow, notice: 'Barrow was successfully updated.' }
+        format.html { redirect_to my_barrows_path, notice: 'Barrow was successfully updated.' }
         format.json { render :show, status: :ok, location: @barrow }
       else
         format.html { render :edit }
