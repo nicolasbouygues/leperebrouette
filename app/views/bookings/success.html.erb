@@ -1,10 +1,29 @@
+<body>
+
 <div class="container">
   <div class="success">
-    <h1><%= p "Congrats ! You have booked #{@booking.barrow.name} on the #{@booking.booking_date}" %></h1>
-    <h2>Click <%= link_to "here", my_barrows_path %> to go to your home page</h2>
+    <h1 class="congrats">Félicitati<span>o</span>ns, tu as b<span>oo</span>ké <%= "#{@booking.barrow.name} le #{@booking.booking_date}" %></h1>
   <br>
     <div class="container-car-desc">
       <img id="gif-barrow" src="https://media.giphy.com/media/1avrDdGYCH2a4/source.gif" alt="">
     </div>
+    <br>
+    <br>
+    <br>
+    <h2 class="congrats"> Clique <%= link_to "ici", my_barrows_path %> pour aller sur ton profil</h2>
+  </div>
+</div>
+
+</body>
+  <div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    Le père brouette vous remercie chaleureusement de votre viste <i class="fas fa-heart"></i>
   </div>
 </div>
