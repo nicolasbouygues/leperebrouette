@@ -1,18 +1,21 @@
-<body class="background-body">
+<head>
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+</head>
+
+<body class="background-image">
   <div class="container">
-    <div class="pomehage">
 
-      <div class="form-homepage">
-        <h2 class="texts">Loue une brouette. Sah</h2>
-        <%= simple_form_for :search, url: barrows_path, method: :get, class: "action" do |f| %>
-        <div class="bordure-jaune"><%= f.input :town, input_html: {class: "form-control", id: "exampleInputPassword1"}, label: false, placeholder: "Ville" %></div>
-        <div class="bordure-jaune"><%= f.input :category, collection: ['Thermique', 'Manuel', 'Electrique', 'AssistantIncluded', 'Arc-en-ciel'], input_html: {class: "form-control", id: "exampleInputEmail1"}, label: false, placeholder: "Catégorie" %></div>
-        <div class="bordure-jaune"><%= f.input :booking_date, input_html: {class: "form-control", id: "exampleInputEmail1"}, label: false, placeholder: "Date" %></div>
-        <%= f.submit "Rechercher", class: "kak", id: "lebouton" %>
-      <% end %>
+      <div class="pomehage">
+        <div class="form-homepage">
+          <h2 class="texts">Louez une brouette</h2>
+          <%= simple_form_for :search, url: barrows_path, method: :get, class: "action" do |f| %>
+          <div class="bordure-jaune"><%= f.input :town, input_html: {class: "form-control", id: "exampleInputPassword1"}, label: false, placeholder: "Ville" %></div>
+          <div class="bordure-jaune"><%= f.input :category, collection: ['Thermique', 'Manuelle', 'Electrique', 'Avec Assistant'], input_html: {class: "form-control", id: "exampleInputEmail1"}, label: false, placeholder: "Catégorie" %></div>
+          <div class="bordure-jaune"><%= f.input :booking_date, input_html: {class: "form-control", id: "exampleInputEmail1"}, label: false, placeholder: "Date" %></div>
+          <%= f.submit "Rechercher", class: "kak", id: "lebouton" %>
+        <% end %>
       </div>
-
-      <img src="http://www.labellebrouette.fr/wp-content/uploads/2016/04/La_Belle_Brouette_Workspace_design_dessin_projet_Stand_Vegetal_Paysagiste_Decorateur_Interieur_03.jpg" class="imeg" alt="Une brouette fraaah">
+        <h1 class="title-pere">Le Père Brouette since 1972</h1>
     </div>
   </div>
 </body>

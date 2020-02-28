@@ -1,19 +1,29 @@
 // Specific CSS for your home-page
 
-.background-body {
-  background-color: #EFC11F;
+.background-image {
+  background-image: url(http://www.labellebrouette.fr/wp-content/uploads/2016/04/La_Belle_Brouette_Workspace_design_dessin_projet_Stand_Vegetal_Paysagiste_Decorateur_Interieur_03.jpg);
+  background-size: cover;
 }
 
 .pomehage {
   display: flex;
-   vertical-align: middle;
+  vertical-align: middle;
   justify-content: space-between;
+}
+
+.title-pere {
+  margin-top: 150px;
+  font-family: 'Amatic SC';
+  text-align: center;
+  color: white;
+  font-size: bold;
+  font-size: 100px;
 }
 
 .form-homepage {
   background-color: #273E47;
   box-shadow: 4px 4px 10px;
-  margin-top: 150px;
+  margin-top: 30px;
   margin-left: 20px;
   margin-right: 100px;
   height: 567px;
@@ -95,4 +105,8 @@ list-style-type: none;
 
 .congrats span {
   color: #EFC11F;
+}
+
+.background-show {
+  background-color: #EFC11F;
 }
