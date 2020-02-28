@@ -65,7 +65,7 @@ class BarrowsController < ApplicationController
 
     respond_to do |format|
       if @barrow.save
-        format.html { redirect_to barrow_path(@barrow), notice: 'Barrow was successfully created.' }
+        format.html { redirect_to barrow_path(@barrow), notice: 'Vous avez bien posté une nouvelle brouette.' }
         format.json { render :show, status: :created, location: @barrow }
       else
         format.html { render :new }
@@ -79,7 +79,7 @@ class BarrowsController < ApplicationController
   def update
     respond_to do |format|
       if @barrow.update(barrow_params)
-        format.html { redirect_to my_barrows_path, notice: 'Barrow was successfully updated.' }
+        format.html { redirect_to my_barrows_path, notice: 'La brouette a bien été modifiée.' }
         format.json { render :show, status: :ok, location: @barrow }
       else
         format.html { render :edit }
@@ -93,7 +93,7 @@ class BarrowsController < ApplicationController
   def destroy
     @barrow.destroy
     respond_to do |format|
-      format.html { redirect_to my_barrows_path, notice: 'Barrow was successfully destroyed.' }
+      format.html { redirect_to my_barrows_path, notice: 'Annonce de brouette suuprimée.' }
       format.json { head :no_content }
     end
   end

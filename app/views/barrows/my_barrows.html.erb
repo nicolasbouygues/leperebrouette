@@ -12,13 +12,13 @@
 <% if @barrows.empty?  %>
 <p>
 Vous n'avez posté aucune annonce de brouette.
-Cliquez <%= link_to "ici", new_barrow_path %> pour poster une brouette.
+Cliquez <%= link_to "ici", new_barrow_path %> pour poster une annonce de brouette.
 </p>
 <% else %>
   <% @barrows.each do |barrow| %>
     <div class="card-trip">
       <%= cl_image_tag barrow.photo.key, height: 500, width: 730, crop: :fill if barrow.photo.attached? %>
-      <p><%= link_to '+', barrow, method: :delete, data: { confirm: 'Are you sure?' }, class: "link-destroy" %></p>
+      <p><%= link_to '+', barrow, method: :delete, data: { confirm: 'Voulez-vous supprimer cette brouette?' }, class: "link-destroy" %></p>
       <div class="card-trip-infos">
         <div>
           <h2><%=barrow.name%></h2>
@@ -53,7 +53,7 @@ Cliquez <%= link_to "ici", new_barrow_path %> pour poster une brouette.
 <% @bookings.each do |booking| %>
     <div class="card-trip">
       <%= cl_image_tag booking.barrow.photo.key, height: 500, width: 730, crop: :fill if booking.barrow.photo.attached? %>
-      <p><%= link_to '+', booking, method: :delete, data: { confirm: 'Are you sure?' }, class: "link-destroy" %></p>
+      <p><%= link_to '+', booking, method: :delete, data: { confirm: 'Voulez-vous supprimer cette réservation?' }, class: "link-destroy" %></p>
       <div class="card-trip-infos">
         <div>
           <h2><%=booking.booking_date%></h2>
