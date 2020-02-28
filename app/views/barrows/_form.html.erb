@@ -7,7 +7,7 @@
     <div class="bordure-jaune jordure-baune"><%= f.input :name, label: false, placeholder: "Nom", input_html: { id: "inputdebarrow" } %></div>
     <div class="bordure-jaune jordure-baune"><%= f.input :description, label: false, placeholder: "Description", input_html: { id: "inputdebarrow" } %></div>
     <div class="bordure-jaune jordure-baune"><%= f.input :town, label: false, placeholder: "Ville", input_html: { id: "inputdebarrow" } %></div>
-    <div class="bordure-jaune jordure-baune"><%= f.input :category, include_blank: false, collection: ['Thermique', 'Manuel', 'Electrique', 'AssistantIncluded', 'Arc-en-ciel'].map {|d| [d, d]}.unshift(['Choisir catégorie', '']), label: false, placeholder: "Catégorie", input_html: { id: "inputdebarrow" } %></div>
+    <div class="bordure-jaune jordure-baune"><%= f.input :category, include_blank: false, collection: ['Thermique', 'Manuelle', 'Electrique', 'AssistantIncluded', 'Arc-en-ciel'].map {|d| [d, d]}.unshift(['Choisir catégorie', '']), label: false, placeholder: "Catégorie", input_html: { id: "inputdebarrow" } %></div>
     <div class="bordure-jaune jordure-baune"><%= f.input :price, label: false, placeholder: "Prix", input_html: { id: "inputdebarrow" } %></div>
     <div class="laphoto"> <%= f.input :photo, as: :file, label: false, input_html: { id: "iddephoto"} %></div>
   </div>
