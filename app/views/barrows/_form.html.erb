@@ -2,18 +2,19 @@
 <%= simple_form_for(@barrow) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
+<h1 class="newbarrowtitre">Add a barrow</h1>
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :town %>
-    <%= f.input :category, collection: ['Thermique', 'Manuel', 'Electrique', 'AssistantIncluded', 'Arc-en-ciel'] %>
-    <%= f.input :price %>
-    <%= f.input :photo, as: :file %>
+    <div class="bordure-jaune jordure-baune"><%= f.input :name, label: false, placeholder: "Nom", input_html: { id: "inputdebarrow" } %></div>
+    <div class="bordure-jaune jordure-baune"><%= f.input :description, label: false, placeholder: "Description", input_html: { id: "inputdebarrow" } %></div>
+    <div class="bordure-jaune jordure-baune"><%= f.input :town, label: false, placeholder: "Ville", input_html: { id: "inputdebarrow" } %></div>
+    <div class="bordure-jaune jordure-baune"><%= f.input :category, collection: ['Thermique', 'Manuel', 'Electrique', 'AssistantIncluded', 'Arc-en-ciel'], label: false, placeholder: "Catégorie", input_html: { id: "inputdebarrow" } %></div>
+    <div class="bordure-jaune jordure-baune"><%= f.input :price, label: false, placeholder: "Prix", input_html: { id: "inputdebarrow" } %></div>
+    <div class="laphoto"> <%= f.input :photo, as: :file, label: false, input_html: { id: "iddephoto"} %></div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-actions" id="uhohpoopy">
+    <div id="boutonsubmit"> <%= f.button :submit %></div>
+    <div id="boutonback"><%= link_to 'Back', barrows_path, id: "buttonback" %></div>
   </div>
 <% end %>
 
