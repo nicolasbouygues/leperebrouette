@@ -16,7 +16,7 @@
           <% if @barrow.user.photo.attached? %>
             <%= cl_image_tag @barrow.user.photo.key, width: 40, height: 40, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
-            <%= image_tag "anna.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
+            <%= image_tag "avatar_default.png",crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
           <% end %>
           <h5 class="card-text"> <%= @barrow.user.username %> </h5>
         </div>
@@ -25,7 +25,7 @@
         <h4 class="card-text price"><%= @barrow.price %> €</h4>
       <div class="card-body">
 
-        <%= link_to 'Book', barrow_bookings_path(@barrow), method: :post, class: "btn btn-flat"  %>
+        <%= link_to 'Louer', barrow_bookings_path(@barrow), method: :post, class: "btn btn-flat"  %>
 
      </div>
 
@@ -46,7 +46,7 @@
   <br>
 
   <div
-    id="map" style="width: 100%; height: 600px;"
+    id="map" style="width: 100%; height: 400px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
@@ -55,7 +55,7 @@
 
 
 
-  <%= link_to 'Back', my_barrows_path %>
+  <%= link_to 'Précédent', my_barrows_path %>
 
   </div>
 
